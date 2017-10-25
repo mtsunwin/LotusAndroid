@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LotusFlower</string>
+    <string name="botrong">Bạn không được bỏ trống ô này!</string>
+
+    <string name="home">Nhà</string>
+    <string name="camera">Máy ảnh</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="newfeed">Tin tức</string>
+
+</resources>

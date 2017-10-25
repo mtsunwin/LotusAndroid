@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.iuh.minhthanghuunghia.lotusflowernt.HomeActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color100"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color100"
+                android:src="@drawable/ic_house" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color100"
+                android:src="@drawable/ic_search" />
+
+            <ImageButton
+                android:id="@+id/newfeed"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color100"
+                android:src="@drawable/ic_newspaper" />
+
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color100"
+                android:src="@drawable/ic_photo_camera" />
+
+        </android.support.v7.widget.Toolbar>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/framelayout"></FrameLayout>
+    </LinearLayout>
+</layout>
