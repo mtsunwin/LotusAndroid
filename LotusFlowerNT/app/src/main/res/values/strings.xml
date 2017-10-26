@@ -7,4 +7,6 @@
     <string name="search">Tìm kiếm</string>
     <string name="newfeed">Tin tức</string>
 
+    <string name="errPassword2">Mật khẩu nhập lại không chính xác</string>
+
 </resources>

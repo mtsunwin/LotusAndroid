@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.iuh.minhthanghuunghia.lotusflowernt.Model.User;
 import com.iuh.minhthanghuunghia.lotusflowernt.R;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityRegisterBinding;
 
@@ -33,5 +34,20 @@ public class RegisterActivity extends AppCompatActivity {
         intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    private boolean checkData() {
+        User user = new User();
+        if (!binding.editTextPassword.getText().toString().equals(binding.editTextPasswordSeccond.getText().toString())) {
+            return false;
+        }
+        if (binding.editTextMail.getText().toString().length() < 0) {
+            return false;
+        }
+        if (binding.editTextUsername.getText().toString().length() < 0) {
+            return false;
+        }
+
+        return false;
     }
 }
