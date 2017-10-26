@@ -4,6 +4,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -65,12 +67,12 @@
                 android:gravity="center|start"
                 android:hint="Like" />
 
-            <Button
+            <TextView
                 android:id="@+id/button_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:gravity="right"
-                android:text="comment" />
+                android:text="Comment" />
         </LinearLayout>
     </LinearLayout>
 </layout>

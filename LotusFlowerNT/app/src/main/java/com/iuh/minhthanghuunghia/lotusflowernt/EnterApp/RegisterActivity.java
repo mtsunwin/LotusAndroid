@@ -1,12 +1,18 @@
-package com.iuh.minhthanghuunghia.lotusflowernt;
+package com.iuh.minhthanghuunghia.lotusflowernt.EnterApp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.iuh.minhthanghuunghia.lotusflowernt.R;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityRegisterBinding;
+
+import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_OVER_REGISTER;
+import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_PASSWORD;
+import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_USERNAME;
 
 public class RegisterActivity extends AppCompatActivity {
     private ActivityRegisterBinding binding;
@@ -25,9 +31,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void buttonRegister() {
         Intent intent = new Intent();
-        intent.putExtra("username", binding.editTextUsername.getText().toString());
-        intent.putExtra("password", binding.editTextPassword.getText().toString());
-        setResult(RESULT_OK, intent);
+        intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
+        intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
+        setResult(KEY_OVER_REGISTER, intent);
         finish();
     }
 }
