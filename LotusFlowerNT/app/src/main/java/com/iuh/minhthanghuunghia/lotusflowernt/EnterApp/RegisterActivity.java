@@ -26,28 +26,46 @@ public class RegisterActivity extends AppCompatActivity {
                 buttonRegister();
             }
         });
+        binding.textViewHadAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void buttonRegister() {
-        Intent intent = new Intent();
-        intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
-        intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
-        setResult(RESULT_OK, intent);
-        finish();
+        if (checkData()) {
+            Intent intent = new Intent();
+            intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
+            intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 
     private boolean checkData() {
         User user = new User();
         if (!binding.editTextPassword.getText().toString().equals(binding.editTextPasswordSeccond.getText().toString())) {
+            binding.editTextPasswordSeccond.setError(getApplicationContext().getResources().getString(R.string.errPasswordSeccon));
+            binding.editTextPasswordSeccond.setFocusable(true);
             return false;
         }
         if (binding.editTextMail.getText().toString().length() < 0) {
+            binding.editTextMail.setError(getApplicationContext().getResources().getString(R.string.errEmailNull));
+            binding.editTextMail.setFocusable(true);
             return false;
         }
         if (binding.editTextUsername.getText().toString().length() < 0) {
+            binding.editTextUsername.setError(getApplicationContext().getResources().getString(R.string.errUsernameNull));
+            binding.editTextUsername.setFocusable(true);
             return false;
         }
-
-        return false;
+        user.setEmail(binding.editTextMail.getText().toString());
+        user.setPassword(binding.editTextPassword.getText().toString());
+        user.setUsername(binding.editTextUsername.getText().toString());
+        return true;
     }
 }

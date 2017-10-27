@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.HomeActivity;
@@ -50,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == KEY_OVER_REGISTER && resultCode == Activity.RESULT_OK) {
-            Log.e("tmt", data.getStringExtra(KEY_USERNAME));
+            binding.editTextUsername.setText(data.getStringExtra(KEY_USERNAME));
+            binding.editTextPassword.setText(data.getStringExtra(KEY_PASSWORD));
         }
     }
 }
