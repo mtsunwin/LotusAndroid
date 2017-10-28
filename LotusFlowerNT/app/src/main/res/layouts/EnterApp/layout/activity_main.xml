@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.iuh.minhthanghuunghia.lotusflowernt.MainActivity">
+        tools:context="com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity">
 
         <ImageView
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|start"
-                    android:hint="Username" />
+                    android:hint="@string/hintUsername" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -41,15 +41,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|start"
-                    android:hint="Password"
+                    android:hint="@string/hintPassword"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
-
-            <CheckBox
-                android:id="@+id/checkBox_remember"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Remember username" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,18 +52,11 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_signWith"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Sign in with" />
-
-                <Button
                     android:id="@+id/button_signIn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Sign in" />
+                    android:hint="@string/btnSignIn" />
             </LinearLayout>
         </LinearLayout>
 
@@ -80,7 +67,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:hint="Create an account" />
+            android:text="@string/hintRegister" />
 
     </LinearLayout>
 </layout>

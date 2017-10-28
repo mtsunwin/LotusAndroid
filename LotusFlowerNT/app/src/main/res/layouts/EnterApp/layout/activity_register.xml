@@ -2,12 +2,13 @@
 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="20dp"
-        tools:context="com.iuh.minhthanghuunghia.lotusflowernt.RegisterActivity">
+        tools:context="com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.RegisterActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +27,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
+            android:gravity="center"
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
@@ -37,7 +39,7 @@
                     android:id="@+id/editText_username"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="Username" />
+                    android:hint="@string/hintUsername" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -48,7 +50,7 @@
                     android:id="@+id/editText_password"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="Password"
+                    android:hint="@string/hintPassword"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -60,7 +62,7 @@
                     android:id="@+id/editText_passwordSeccond"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="Enter password again"
+                    android:hint="@string/hintPasswordSeccond"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -72,14 +74,30 @@
                     android:id="@+id/editText_mail"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="Email" />
+                    android:hint="@string/hintEmail"
+                    android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/button_register"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:hint="Register" />
+                android:hint="@string/btnRegister" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView_hadAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/hintHaveAccount" />
         </LinearLayout>
     </LinearLayout>
 </layout>
