@@ -4,75 +4,119 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/backgroundNews"
+        android:orientation="vertical"
         android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:orientation="vertical">
+        android:paddingRight="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@color/backgroundNews"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView_post_avatar"
                 android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
-                android:layout_height="60dp" />
+                android:background="@color/backgroundNews" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="5dp"
-                android:orientation="vertical">
+                android:background="@color/backgroundNews"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
 
                 <TextView
                     android:id="@+id/textView_post_Accountname"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="2"
+                    android:background="@color/backgroundNews"
                     android:gravity="center|start"
-                    android:textSize="16dp"
-                    android:hint="Account name" />
+                    android:hint="Account name"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textView_post_time"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:textSize="11dp"
+                    android:background="@color/backgroundNews"
                     android:gravity="center|start"
-                    android:hint="Time" />
+                    android:hint="Time"
+                    android:textSize="11dp" />
 
             </LinearLayout>
         </LinearLayout>
 
         <TextView
-            android:padding="5dp"
             android:id="@+id/textView_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="content" />
+            android:background="@color/backgroundNews"
+            android:hint="content"
+            android:padding="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/backgroundNews"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkBox_post_like"
+            <LinearLayout
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_height="35dp"
-                android:gravity="center|start"
-                android:hint="Like" />
+                android:background="@color/backgroundNews"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/button_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:gravity="right"
-                android:text="Comment" />
+                <ImageButton
+                    android:id="@+id/button_Like"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@color/backgroundNews"
+                    android:gravity="start"
+                    android:src="@drawable/ic_likenormal" />
+
+                <TextView
+                    android:id="@+id/textView_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/backgroundNews"
+                    android:gravity="center"
+                    android:text="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/backgroundNews"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/backgroundNews"
+                    android:gravity="center"
+                    android:text="1" />
+
+                <ImageButton
+                    android:id="@+id/button_comment"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@color/backgroundNews"
+                    android:gravity="center"
+                    android:src="@drawable/ic_commenting"
+                    android:text="Comment" />
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </layout>
