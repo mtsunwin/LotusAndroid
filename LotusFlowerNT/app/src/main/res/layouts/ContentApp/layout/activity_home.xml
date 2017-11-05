@@ -15,7 +15,7 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/imageButton_home"
+                android:id="@+id/home"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -23,7 +23,7 @@
                 android:src="@drawable/ic_house" />
 
             <ImageButton
-                android:id="@+id/imageButton_search"
+                android:id="@+id/search"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -31,7 +31,7 @@
                 android:src="@drawable/ic_search" />
 
             <ImageButton
-                android:id="@+id/imageButton_newfeed"
+                android:id="@+id/newfeed"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -39,7 +39,7 @@
                 android:src="@drawable/ic_newspaper" />
 
             <ImageButton
-                android:id="@+id/imageButton_camera"
+                android:id="@+id/camera"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -47,11 +47,10 @@
                 android:src="@drawable/ic_photo_camera" />
 
         </android.support.v7.widget.Toolbar>
-
         <FrameLayout
-            android:id="@+id/framelayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/framelayout"></FrameLayout>
 
     </LinearLayout>
 </layout>
