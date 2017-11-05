@@ -40,7 +40,6 @@ public class NewsFragment extends Fragment {
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(binding.getRoot().getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-
         return binding.getRoot();
     }
 }
