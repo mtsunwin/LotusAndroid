@@ -8,6 +8,52 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private String nickname;
+    private String address;
+    private String gender;
+    private String about;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public User(String username, String password, String email, String nickname, String address, String gender, String about) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.nickname = nickname;
+        this.address = address;
+        this.gender = gender;
+        this.about = about;
+    }
 
     public User(String username, String password, String email) {
         this.username = username;
