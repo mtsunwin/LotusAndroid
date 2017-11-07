@@ -11,8 +11,11 @@ import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
+
     private NewsFragment newsFragment;
     private ProfileFragment profileFragment;
+    private CameraFragment cameraFragment;
+
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
 
@@ -23,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
 
         newsFragment = new NewsFragment();
         profileFragment = new ProfileFragment();
+        cameraFragment = new CameraFragment();
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -44,6 +48,15 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.framelayout, profileFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        binding.imageButtonCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.framelayout, cameraFragment);
                 fragmentTransaction.commit();
             }
         });
