@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.Model.User;
 import com.iuh.minhthanghuunghia.lotusflowernt.R;
+import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.UserTable;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityRegisterBinding;
 
 import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_PASSWORD;
@@ -36,11 +37,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void buttonRegister() {
         if (checkData()) {
-            Intent intent = new Intent();
-            intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
-            intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
-            setResult(RESULT_OK, intent);
-            finish();
+            UserTable table = new UserTable(getApplicationContext());
+            Object user = new User(binding.editTextUsername.getText().toString(),
+                    binding.editTextPassword.getText().toString(),
+                    binding.editTextMail.getText().toString());
+            if (table.insert(user) > 0) {
+                Intent intent = new Intent();
+                intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
+                intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
+                setResult(RESULT_OK, intent);
+                finish();
+            }
         }
     }
 
