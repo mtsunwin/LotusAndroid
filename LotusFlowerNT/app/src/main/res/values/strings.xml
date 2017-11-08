@@ -19,6 +19,7 @@
     <string name="errUsername">Tài khoản của bạn phải từ 3 ký tự trở lên</string>
     <string name="errUsernameNull">Tài khoản không được để trống</string>
     <string name="errUsernamePattern">Tài khoản không hợp lệ hoặc bị trùng</string>
+    <string name="errLoginFalse">Tài khoản hoặc mật khẩu không chính xác</string>
     <!--END ERROR TEXT-->
 
     <!--HINT TEXT-->

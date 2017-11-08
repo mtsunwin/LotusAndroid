@@ -61,9 +61,9 @@ public class User {
         this.email = email;
     }
 
-    public User(String username, String email) {
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
+        this.password = password;
     }
 
     public User() {
@@ -95,7 +95,6 @@ public class User {
     }
 
     public String getUsername() {
-
         return username;
     }
 
