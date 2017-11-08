@@ -3,6 +3,7 @@ package com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.Model.User;
 
@@ -32,26 +33,30 @@ public class UserTable extends MyTable {
             + col_about + " nvarchar(50) "
             + ")";
 
-
     public UserTable(Context context) {
         super(context);
     }
 
-    public User getUser(String username) {
-        Cursor cursor = database.query(nameTable_User, null, col_username + " = ?",
-                new String[]{username}, null, null, null);
-        if (cursor.moveToFirst()) {
-            User user = new User();
-            user.setUsername(cursor.getString(1));
-            return user;
+    public boolean login(User user) {
+        String str = col_username + " = ? and " + col_password + " = ?";
+        String[] arStrings = new String[]{user.getUsername(), user.getPassword()};
+        if (user.getEmail() instanceof String) {
+            str += " and " + col_email + " =?";
+            arStrings = new String[]{user.getUsername(), user.getPassword(), user.getEmail()};
         }
-        return null;
+        Cursor cursor = database.query(nameTable_User, null, str, arStrings,
+                null, null, null);
+        if (cursor.moveToFirst()) {
+            Log.e("tmt login", cursor.getString(0));
+            return true;
+        }
+        return false;
     }
 
     @Override
     public long insert(Object _obj) {
         User user = (User) _obj;
-        if (getUser(user.getUsername()) == null) {
+        if (login(user)) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(col_username, user.getUsername());
             contentValues.put(col_password, user.getPassword());
