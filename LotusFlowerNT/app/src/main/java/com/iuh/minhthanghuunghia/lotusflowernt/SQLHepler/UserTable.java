@@ -3,7 +3,6 @@ package com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.Model.User;
 
@@ -46,17 +45,16 @@ public class UserTable extends MyTable {
         }
         Cursor cursor = database.query(nameTable_User, null, str, arStrings,
                 null, null, null);
-        if (cursor.moveToFirst()) {
-            Log.e("tmt login", cursor.getString(0));
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0)
             return true;
-        }
         return false;
     }
 
     @Override
     public long insert(Object _obj) {
         User user = (User) _obj;
-        if (login(user)) {
+        if (!login(user)) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(col_username, user.getUsername());
             contentValues.put(col_password, user.getPassword());
