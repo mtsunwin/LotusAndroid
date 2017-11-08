@@ -28,7 +28,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|start"
-                    android:hint="@string/hintUsername" />
+                    android:hint="@string/hintUsername"
+                    android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout

@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else {
+                binding.editTextUsername.setFocusable(true);
                 binding.editTextUsername.setError(
                         getApplicationContext().getResources().getString(R.string.errLoginFalse));
                 binding.editTextUsername.setText("");
                 binding.editTextPassword.setText("");
-                binding.editTextUsername.setFocusable(true);
             }
         } else {
             if (binding.editTextPassword.getText().toString().length() == 0) {
