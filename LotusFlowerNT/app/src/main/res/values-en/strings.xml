@@ -38,6 +38,9 @@
     <string name="btnLanguageViet">Viet Nam</string>
     <string name="btnLanguageEnglish">English</string>
     <string name="btnLogOut">Log Out</string>
+    <string name="btnPopUp">Post</string>
+    <string name="textPopUpHint">Content</string>
+
     <!--END Button TEXT-->
     <!--Text Size-->
     <string name="textSize">11</string>

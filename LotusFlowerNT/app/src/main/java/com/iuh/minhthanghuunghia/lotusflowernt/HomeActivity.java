@@ -61,7 +61,7 @@ public class HomeActivity extends FragmentActivity {
             }
         });
         try {
-            socket = IO.socket("http://192.168.16.103:4567");
+            socket = IO.socket("http://192.168.1.79:4567");
             socket.connect();
             while (!socket.connected()) {
                 Thread.sleep(100);
