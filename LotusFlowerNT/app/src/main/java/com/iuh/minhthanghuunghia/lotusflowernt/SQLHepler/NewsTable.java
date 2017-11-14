@@ -60,7 +60,7 @@ public class NewsTable extends MyTable {
      */
     public ArrayList<News> getMyList(String username) {
         ArrayList<News> newsArrayList = new ArrayList<News>();
-        Cursor cursor = database.query(nameTable_News, null, col_idPoster + " =?", new String[]{username},
+        Cursor cursor = database.query(nameTable_News, null, col_nickname + " = ?", new String[]{username},
                 null, null, null);
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
@@ -76,6 +76,7 @@ public class NewsTable extends MyTable {
                 cursor.moveToNext();
             }
         }
+        Log.e("tmt loadLisst", newsArrayList.toString());
         return newsArrayList;
     }
 
@@ -126,6 +127,9 @@ public class NewsTable extends MyTable {
                 col_id + " =?", new String[]{news.getId()});
     }
 
+    public long deleteAll() {
+        return database.delete(nameTable_News, null, null);
+    }
 
     @Override
     public long delete(int id) {
