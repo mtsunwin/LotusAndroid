@@ -76,7 +76,6 @@ public class NewsTable extends MyTable {
                 cursor.moveToNext();
             }
         }
-        Log.e("tmt loadLisst", newsArrayList.toString());
         return newsArrayList;
     }
 
@@ -92,13 +91,21 @@ public class NewsTable extends MyTable {
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
             while (!cursor.isAfterLast()) {
+                Log.e("tml cursor",cursor.getInt(0)+"-"+cursor.getString(1)+"-"+cursor.getString(2)+"-"+cursor.getString(3)+"-"
+                        +cursor.getString(4)+"-"+cursor.getString(5));
                 News news1 = new News();
-                news1.setId(cursor.getInt(0) + "");
+                news1.setId(cursor.getInt(0)+"");
                 news1.setNickName(cursor.getString(1));
                 news1.setUserName(cursor.getString(2));
                 news1.setTime(cursor.getString(3));
                 news1.setContent(cursor.getString(4));
-                news1.setLike(cursor.getString(5) == "true" ? true : false);
+                if(cursor.getInt(5)==1 || cursor.getString(5).equals("true")){
+                    news1.setLike(true);
+                }
+                else
+                {
+                    news1.setLike(false);
+                }
                 newsArrayList.add(news1);
                 cursor.moveToNext();
             }
@@ -118,19 +125,14 @@ public class NewsTable extends MyTable {
         News news = (News) _obj;
         Log.e("tmt uped", news.toString());
         ContentValues contentValues = new ContentValues();
-        contentValues.put(col_like, news.isLike() + "");
-        contentValues.put(col_content, news.getContent());
-        contentValues.put(col_time, news.getTime());
-        contentValues.put(col_idPoster, news.getUserName());
-        contentValues.put(col_nickname, news.getNickName());
+        contentValues.put(col_like, news.isLike());
         return database.update(nameTable_News, contentValues,
-                col_id + " =?", new String[]{news.getId()});
+                col_id +"=?", new String[]{news.getId()});
     }
 
-    public long deleteAll() {
-        return database.delete(nameTable_News, null, null);
+    public long deleteAll(){
+        return database.delete(nameTable_News,null,null);
     }
-
     @Override
     public long delete(int id) {
         return 0;

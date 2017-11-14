@@ -77,7 +77,7 @@ public class AdapterNews extends RecyclerView.Adapter {
         itemNewsBinding.textViewContent.setText(news.getContent());
         itemNewsBinding.textViewPostTime.setText(news.getTime());
         itemNewsBinding.textViewPostAccountname.setText(news.getNickName());
-        if (news.isLike()) {
+        if(String.valueOf(news.isLike()).equals("true")){
             itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_like));
         } else {
             itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_likenormal));

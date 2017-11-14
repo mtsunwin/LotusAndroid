@@ -59,6 +59,8 @@ public class SetupFragment extends Fragment{
                 Intent i = getContext().getPackageManager()
                         .getLaunchIntentForPackage( getContext().getPackageName() );
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                getActivity().finish();
                 startActivity(i);
             }
         });

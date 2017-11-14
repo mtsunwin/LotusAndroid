@@ -3,6 +3,7 @@ package com.iuh.minhthanghuunghia.lotusflowernt;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.TabLayout;
@@ -60,6 +61,7 @@ public class HomeActivity extends FragmentActivity {
                 actionUpNews();
             }
         });
+    
         try {
             socket = IO.socket("http://192.168.16.103:4567");
             socket.connect();

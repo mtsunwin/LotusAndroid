@@ -1,5 +1,8 @@
 package com.iuh.minhthanghuunghia.lotusflowernt.InComeApp;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +18,7 @@ import android.widget.ArrayAdapter;
 import com.iuh.minhthanghuunghia.lotusflowernt.AdapterRecyclerView.AdapterNews;
 import com.iuh.minhthanghuunghia.lotusflowernt.Model.News;
 import com.iuh.minhthanghuunghia.lotusflowernt.R;
+
 import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.NewsTable;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityNewsFragmentBinding;
 
@@ -26,11 +30,10 @@ import java.util.Date;
 public class NewsFragment extends Fragment {
     private ActivityNewsFragmentBinding binding;
     private ArrayAdapter listNews;
-
+    private AdapterView.AdapterContextMenuInfo menuinfo;
     private AdapterNews adapterNews;
     private NewsTable database_news;
-
-
+    private MySQLHelper helper;
     private ArrayList<News> dsNews;
     private ArrayList<News> dsCompleted;
 
@@ -92,5 +95,4 @@ public class NewsFragment extends Fragment {
 
         return binding.getRoot();
     }
-
 }

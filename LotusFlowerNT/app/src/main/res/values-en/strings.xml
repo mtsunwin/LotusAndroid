@@ -38,6 +38,8 @@
     <string name="btnLanguageViet">Viet Nam</string>
     <string name="btnLanguageEnglish">English</string>
     <string name="btnLogOut">Log Out</string>
+    <string name="contextMenu_Delete">Delete</string>
+    <string name="contextMenu_Update">Update</string>
     <!--END Button TEXT-->
     <!--Text Size-->
     <string name="textSize">11</string>
