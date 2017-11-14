@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_context_update" android:title="@string/contextMenu_Update"></item>
-    <item android:id="@+id/menu_context_delete" android:title="@string/contextMenu_Delete"></item>
-</menu>
