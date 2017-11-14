@@ -25,5 +25,4 @@
             android:name=".Pop_UpNews"
             android:theme="@android:style/Theme.Holo.Light.Dialog" />
     </application>
-
 </manifest>
