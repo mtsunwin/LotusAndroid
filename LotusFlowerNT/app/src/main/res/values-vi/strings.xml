@@ -35,8 +35,12 @@
     <string name="btnRegister">Đăng ký</string>
     <string name="btnSignIn">Đăng nhập</string>
     <string name="btnSignInWith">Đăng nhập với</string>
+    <string name="btnLanguageViet">Việt Nam</string>
+    <string name="btnLanguageEnglish">Tiếng Anh</string>
+    <string name="btnLogOut">Đăng xuất</string>
     <string name="contextMenu_Delete">Xóa</string>
     <string name="contextMenu_Update">Cập nhật</string>
+
     <!--END Button TEXT-->
     <!--Text Size-->
     <string name="textSize">11</string>

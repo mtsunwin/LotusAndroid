@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">LotusFlower</string>
+    <string name="botrong">This can not be null</string>
+
+    <string name="home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="search">Search</string>
+    <string name="newfeed">Newfeed</string>
+
+    <!--ERROR TEXT-->
+    <string name="errPasswordSeccon">confirmed password is wrong</string>
+    <string name="errPasswordSecconNull">U have not confirmed password</string>
+    <string name="errPasswordFirtsNull">Password can not be blank</string>
+    <string name="errPasswordFirts">Password must have more than 3 characters</string>
+
+    <string name="errEmailPattern">Invalid email</string>
+    <string name="errEmailNull">Email address can not be blank</string>
+
+    <string name="errUsername">username must have more than 3 characters</string>
+    <string name="errUsernameNull">UserName can not be blank</string>
+    <string name="errUsernamePattern">Invalid or repeated username</string>
+    <string name="errLoginFalse">Wrong username or password</string>
+    <!--END ERROR TEXT-->
+
+    <!--HINT TEXT-->
+    <string name="hintHaveAccount">Having an account?</string>
+    <string name="hintRegister">Create Account</string>
+    <string name="hintUsername">UserName</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintPasswordSeccond">Confirm Password</string>
+    <string name="hintEmail">Email address</string>
+    <!--END HINT TEXT-->
+
+    <!--Button TEXT-->
+    <string name="btnRegister">Sign up</string>
+    <string name="btnSignIn">Sign in</string>
+    <string name="btnSignInWith">Sign in with</string>
+    <string name="btnLanguageViet">Viet Nam</string>
+    <string name="btnLanguageEnglish">English</string>
+    <string name="btnLogOut">Log Out</string>
+    <string name="contextMenu_Delete">Delete</string>
+    <string name="contextMenu_Update">Update</string>
+
+    <!--END Button TEXT-->
+    <!--Text Size-->
+    <string name="textSize">11</string>
+    <!--END Text Size-->
+</resources>

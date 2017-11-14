@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.HomeActivity;
-import com.iuh.minhthanghuunghia.lotusflowernt.Model.User;
 import com.iuh.minhthanghuunghia.lotusflowernt.R;
 import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.UserTable;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityMainBinding;
@@ -19,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
+    public static final String KEY = "login";
     public static final int KEY_OVER_REGISTER = 1;
 
     @Override
@@ -40,22 +40,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sử lý sự kiện đăng nhập
+     * <p>
+     * gửi Bundle đến class HomeActivity
+     */
     private void buttonSignin() {
         if (binding.editTextPassword.getText().toString().length() >= 3
                 && binding.editTextUsername.getText().toString().length() >= 3) {
-            User user = new User(binding.editTextUsername.getText().toString(),
-                    binding.editTextPassword.getText().toString());
             UserTable table = new UserTable(getApplicationContext());
-            if (table.login(user)) {
+            if (table.login(binding.editTextUsername.getText().toString(), binding.editTextPassword.getText().toString(), null) != null) {
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString(KEY_USERNAME, binding.editTextUsername.getText().toString());
+                bundle.putString(KEY_PASSWORD, binding.editTextPassword.getText().toString());
+                intent.putExtra(KEY, bundle);
                 startActivity(intent);
                 finish();
             } else {
+                binding.editTextUsername.setFocusable(true);
                 binding.editTextUsername.setError(
                         getApplicationContext().getResources().getString(R.string.errLoginFalse));
                 binding.editTextUsername.setText("");
                 binding.editTextPassword.setText("");
-                binding.editTextUsername.setFocusable(true);
             }
         } else {
             if (binding.editTextPassword.getText().toString().length() == 0) {

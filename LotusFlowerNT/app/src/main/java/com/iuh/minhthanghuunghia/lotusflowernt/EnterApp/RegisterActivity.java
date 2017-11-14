@@ -11,7 +11,6 @@ import com.iuh.minhthanghuunghia.lotusflowernt.R;
 import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.UserTable;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityRegisterBinding;
 
-import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_PASSWORD;
 import static com.iuh.minhthanghuunghia.lotusflowernt.EnterApp.MainActivity.KEY_USERNAME;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -44,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
             if (table.insert(user) > 0) {
                 Intent intent = new Intent();
                 intent.putExtra(KEY_USERNAME, binding.editTextUsername.getText().toString());
-                intent.putExtra(KEY_PASSWORD, binding.editTextPassword.getText().toString());
                 setResult(RESULT_OK, intent);
                 finish();
             }

@@ -12,7 +12,7 @@ public abstract class MyTable {
 
     public MyTable(Context context) {
         MySQLHelper helper = new MySQLHelper(context);
-        database = helper.getReadableDatabase();
+        database = helper.getWritableDatabase();
     }
 
     public abstract long insert(Object _obj);

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class MySQLHelper extends SQLiteOpenHelper {
-    private static final int version = 1;
+    private static final int version = 4;
     private static String databaseName = "Lotus";
 
     public MySQLHelper(Context context) {
@@ -19,10 +19,16 @@ public class MySQLHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UserTable.CREATE_USER);
+        db.execSQL(NewsTable.CREATE_NEWS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String drop = "DROP TABLE IF EXISTS ";
+        if (newVersion != oldVersion) {
+            db.execSQL(drop + UserTable.nameTable_User);
+            db.execSQL(drop + NewsTable.nameTable_News);
+            onCreate(db);
+        }
     }
 }

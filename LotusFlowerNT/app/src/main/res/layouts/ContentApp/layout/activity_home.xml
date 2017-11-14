@@ -7,51 +7,32 @@
         android:orientation="vertical"
         tools:context="com.iuh.minhthanghuunghia.lotusflowernt.HomeActivity">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/color100"
-            android:gravity="center">
+            android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/imageButton_home"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color100"
-                android:src="@drawable/ic_house" />
-
-            <ImageButton
-                android:id="@+id/imageButton_search"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color100"
-                android:src="@drawable/ic_search" />
-
-            <ImageButton
-                android:id="@+id/imageButton_newfeed"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color100"
-                android:src="@drawable/ic_newspaper" />
-
-            <ImageButton
-                android:id="@+id/imageButton_camera"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color100"
-                android:src="@drawable/ic_photo_camera" />
-
-        </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.TabLayout>
 
         <FrameLayout
-            android:id="@+id/framelayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent">
 
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+            <ImageButton
+                android:id="@+id/button_upNews"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="bottom|start"
+                android:background="@drawable/ic_paper_plane"
+                android:text="Đăng tin" />
+
+        </FrameLayout>
     </LinearLayout>
 </layout>

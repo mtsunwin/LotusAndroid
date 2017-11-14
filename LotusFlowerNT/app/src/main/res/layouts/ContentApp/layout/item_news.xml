@@ -47,7 +47,6 @@
                     android:layout_weight="1"
                     android:background="@color/backgroundNews"
                     android:gravity="center|start"
-                    android:hint="Time"
                     android:textSize="11dp" />
 
             </LinearLayout>
@@ -76,13 +75,14 @@
 
                 <ImageButton
                     android:id="@+id/button_Like"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@color/backgroundNews"
-                    android:gravity="start"
-                    android:src="@drawable/ic_likenormal" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_likenormal"
+                    android:gravity="start" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/textView_like"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

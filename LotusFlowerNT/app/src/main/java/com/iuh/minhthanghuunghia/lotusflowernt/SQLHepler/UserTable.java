@@ -20,7 +20,16 @@ public class UserTable extends MyTable {
     public static final String col_address = "address";
     public static final String col_gender = "gender";
     public static final String col_about = "about";
-    public static final String col_id = "id";
+    private static final String col_id = "id";
+    private static final int id = 0;
+    private static final int username = 1;
+    private static final int password = 2;
+    private static final int email = 3;
+    private static final int nickname = 4;
+    private static final int address = 5;
+    private static final int gender = 6;
+    private static final int about = 7;
+
 
     public static final String CREATE_USER = "CREATE TABLE " + nameTable_User + "("
             + col_id + " integer primary key autoincrement, "
@@ -37,26 +46,27 @@ public class UserTable extends MyTable {
         super(context);
     }
 
-    public boolean login(User user) {
+    public User login(String _username, String _password, String _email) {
         String str = col_username + " = ? and " + col_password + " = ?";
-        String[] arStrings = new String[]{user.getUsername(), user.getPassword()};
-        if (user.getEmail() instanceof String) {
+        String[] arStrings = new String[]{_username, _password};
+        if (_email != null) {
             str += " and " + col_email + " =?";
-            arStrings = new String[]{user.getUsername(), user.getPassword(), user.getEmail()};
+            arStrings = new String[]{_username, _password, _email};
         }
         Cursor cursor = database.query(nameTable_User, null, str, arStrings,
                 null, null, null);
-        if (cursor.moveToFirst()) {
-            Log.e("tmt login", cursor.getString(0));
-            return true;
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0) {
+            return new User(cursor.getString(username), cursor.getString(email), cursor.getString(nickname),
+                    cursor.getString(address), cursor.getString(gender), cursor.getString(about));
         }
-        return false;
+        return null;
     }
 
     @Override
     public long insert(Object _obj) {
         User user = (User) _obj;
-        if (login(user)) {
+        if (login(user.getUsername(), user.getPassword(), user.getEmail()) == null) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(col_username, user.getUsername());
             contentValues.put(col_password, user.getPassword());
@@ -65,6 +75,7 @@ public class UserTable extends MyTable {
             contentValues.put(col_email, user.getEmail());
             contentValues.put(col_gender, "");
             contentValues.put(col_nickname, "");
+            Log.e("tmt", "database inserted");
             return database.insert(nameTable_User, null, contentValues);
         }
         return -1;
@@ -77,6 +88,34 @@ public class UserTable extends MyTable {
 
     @Override
     public long delete(int id) {
+
         return 0;
+    }
+
+    public User getInfor(String username) {
+        Cursor cursor = database.query(nameTable_User, null, col_username + " = ?",
+                new String[]{username},
+                null, null, null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            User user = new User();
+            user.setUsername(cursor.getString(1));
+            user.setPassword(cursor.getString(2));
+            user.setEmail(cursor.getString(3));
+            user.setNickname(cursor.getString(4));
+            user.setAddress(cursor.getString(5));
+            user.setGender(cursor.getString(6));
+            user.setAbout(cursor.getString(7));
+            return user;
+        }
+        return null;
+    }
+
+    /***
+     * Thực hiện xóa dữ liệu trong table User
+     * @return (>0) true, (<0) false
+     */
+    public long clearList() {
+        return database.delete(nameTable_User, null, null);
     }
 }
