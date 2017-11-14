@@ -38,6 +38,7 @@
     <string name="btnLanguageViet">Việt Nam</string>
     <string name="btnLanguageEnglish">Tiếng Anh</string>
     <string name="btnLogOut">Đăng xuất</string>
+
     <string name="contextMenu_Delete">Xóa</string>
     <string name="contextMenu_Update">Cập nhật</string>
 

@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,7 +108,7 @@ public class ProfileFragment extends Fragment implements AdapterProfile.callBack
                 binding.swipeRefreshLayout.setRefreshing(false);
             }
         });
-        for (News news : dsNews) {
+        for (News news : dsCompleted) {
             LinearLayout linearLayoutContainer = new LinearLayout(getContext());
             linearLayoutContainer.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));

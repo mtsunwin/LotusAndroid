@@ -88,10 +88,8 @@ public class AdapterProfile extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        Log.e("tmt positio", position + "");
         if (position == 0) {
             ItemProfileBinding itemProfileBinding = DataBindingUtil.findBinding(holder.itemView);
-            Log.e("tmt", user.toString());
             String nick = user.getNickname().length() == 0 ? user.getUsername() : user.getNickname();
             itemProfileBinding.txtNickname.setText(nick);
             itemProfileBinding.txtSummaryInfor.setText(user.getAbout());

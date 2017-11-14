@@ -60,7 +60,7 @@ public class NewsTable extends MyTable {
      */
     public ArrayList<News> getMyList(String username) {
         ArrayList<News> newsArrayList = new ArrayList<News>();
-        Cursor cursor = database.query(nameTable_News, null, col_idPoster + " =?", new String[]{username},
+        Cursor cursor = database.query(nameTable_News, null, col_nickname + " = ?", new String[]{username},
                 null, null, null);
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
@@ -90,7 +90,6 @@ public class NewsTable extends MyTable {
                 null, null, null);
         cursor.moveToFirst();
         if (cursor.getCount() > 0) {
-
             while (!cursor.isAfterLast()) {
                 Log.e("tml cursor",cursor.getInt(0)+"-"+cursor.getString(1)+"-"+cursor.getString(2)+"-"+cursor.getString(3)+"-"
                         +cursor.getString(4)+"-"+cursor.getString(5));
@@ -107,7 +106,6 @@ public class NewsTable extends MyTable {
                 {
                     news1.setLike(false);
                 }
-//              news1.setLike(cursor.getString(5) == "1" ? true : false);
                 newsArrayList.add(news1);
                 cursor.moveToNext();
             }

@@ -29,7 +29,6 @@ public class AdapterNews extends RecyclerView.Adapter {
 
 
     public AdapterNews(ArrayList<News> dsNews, Context context, NewsTable database_news) {
-        Log.e("tmt", dsNews.toString());
         this.dsNews = dsNews;
         this.context = context;
         this.database_news = database_news;
@@ -48,7 +47,6 @@ public class AdapterNews extends RecyclerView.Adapter {
         public void onClick(View v) {
             int position = getLayoutPosition();
             News news = dsNews.get(position);
-            Log.e("tmt get update 1", news.toString());
             if (news.isLike()) {
                 button.setBackground(context.getDrawable(R.drawable.ic_likenormal));
                 selectedList.remove(Integer.valueOf(position));
@@ -57,10 +55,7 @@ public class AdapterNews extends RecyclerView.Adapter {
                 selectedList.add(position);
             }
             news.setLike(!news.isLike());
-            Log.e("tmt get update", news.toString());
             database_news.update(news);
-            Log.e("tml return update", database_news.update(news)+"");
-
         }
 
     }
@@ -78,12 +73,10 @@ public class AdapterNews extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         News news = dsNews.get(position);
-        Log.e("tml news:",news.toString());
         ItemNewsBinding itemNewsBinding = DataBindingUtil.findBinding(holder.itemView);
         itemNewsBinding.textViewContent.setText(news.getContent());
         itemNewsBinding.textViewPostTime.setText(news.getTime());
         itemNewsBinding.textViewPostAccountname.setText(news.getNickName());
-        Log.e("tml like",  String.valueOf(news.isLike()));
         if(String.valueOf(news.isLike()).equals("true")){
             itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_like));
         } else {
@@ -94,16 +87,6 @@ public class AdapterNews extends RecyclerView.Adapter {
                 itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_like));
             }
         }
-        /*if (news.isLike()) {
-            itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_like));
-        } else {
-            itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_likenormal));
-        }
-        for (int i : selectedList) {
-            if (i == position) {
-                itemNewsBinding.buttonLike.setBackground(context.getDrawable(R.drawable.ic_like));
-            }
-        }*/
     }
 
     @Override

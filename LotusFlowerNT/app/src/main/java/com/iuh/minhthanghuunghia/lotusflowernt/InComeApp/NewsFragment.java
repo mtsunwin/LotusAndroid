@@ -2,6 +2,7 @@ package com.iuh.minhthanghuunghia.lotusflowernt.InComeApp;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,19 +10,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.iuh.minhthanghuunghia.lotusflowernt.AdapterRecyclerView.AdapterNews;
 import com.iuh.minhthanghuunghia.lotusflowernt.Model.News;
 import com.iuh.minhthanghuunghia.lotusflowernt.R;
-import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.MySQLHelper;
+
 import com.iuh.minhthanghuunghia.lotusflowernt.SQLHepler.NewsTable;
 import com.iuh.minhthanghuunghia.lotusflowernt.databinding.ActivityNewsFragmentBinding;
 
@@ -37,7 +34,6 @@ public class NewsFragment extends Fragment {
     private AdapterNews adapterNews;
     private NewsTable database_news;
     private MySQLHelper helper;
-
     private ArrayList<News> dsNews;
     private ArrayList<News> dsCompleted;
 
@@ -99,6 +95,4 @@ public class NewsFragment extends Fragment {
 
         return binding.getRoot();
     }
-
-
 }
