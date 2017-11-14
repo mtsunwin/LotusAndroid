@@ -12,6 +12,24 @@ public class User {
     private String address;
     private String gender;
     private String about;
+    private byte[] bitmapAvatar;
+    private byte[] bitmapCover;
+
+    public byte[] getBitmapCover() {
+        return bitmapCover;
+    }
+
+    public void setBitmapCover(byte[] bitmapCover) {
+        this.bitmapCover = bitmapCover;
+    }
+
+    public byte[] getBitmapAvatar() {
+        return bitmapAvatar;
+    }
+
+    public void setBitmapAvatar(byte[] bitmapAvatar) {
+        this.bitmapAvatar = bitmapAvatar;
+    }
 
     public String getNickname() {
         return nickname;
@@ -45,9 +63,22 @@ public class User {
         this.about = about;
     }
 
+    public User(String username) {
+        this.username = username;
+    }
+
     public User(String username, String password, String email, String nickname, String address, String gender, String about) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.nickname = nickname;
+        this.address = address;
+        this.gender = gender;
+        this.about = about;
+    }
+
+    public User(String username, String email, String nickname, String address, String gender, String about) {
+        this.username = username;
         this.email = email;
         this.nickname = nickname;
         this.address = address;
@@ -90,10 +121,6 @@ public class User {
         return result;
     }
 
-    public User(String username) {
-        this.username = username;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -116,5 +143,18 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", address='" + address + '\'' +
+                ", gender='" + gender + '\'' +
+                ", about='" + about + '\'' +
+                '}';
     }
 }

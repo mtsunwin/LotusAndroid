@@ -36,6 +36,7 @@
     <string name="btnSignIn">Đăng nhập</string>
     <string name="btnSignInWith">Đăng nhập với</string>
     <!--END Button TEXT-->
-
-
+    <!--Text Size-->
+    <string name="textSize">11</string>
+    <!--END Text Size-->
 </resources>
