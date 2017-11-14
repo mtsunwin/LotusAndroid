@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">LotusFlower</string>
+    <string name="botrong">Bạn không được bỏ trống ô này!</string>
+
+    <string name="home">Nhà</string>
+    <string name="camera">Máy ảnh</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="newfeed">Tin tức</string>
+
+    <!--ERROR TEXT-->
+    <string name="errPasswordSeccon">Mật khẩu nhập lại không chính xác</string>
+    <string name="errPasswordSecconNull">Bạn chưa nhập lại mật khẩu</string>
+    <string name="errPasswordFirtsNull">Mật khẩu của bạn không được để trống</string>
+    <string name="errPasswordFirts">Mật khẩu của bạn phải từ 3 ký tự trở lên</string>
+
+    <string name="errEmailPattern">Địa chỉ Mail không hợp lệ</string>
+    <string name="errEmailNull">Địa chỉ email không được để trống</string>
+
+    <string name="errUsername">Tài khoản của bạn phải từ 3 ký tự trở lên</string>
+    <string name="errUsernameNull">Tài khoản không được để trống</string>
+    <string name="errUsernamePattern">Tài khoản không hợp lệ hoặc bị trùng</string>
+    <string name="errLoginFalse">Tài khoản hoặc mật khẩu không chính xác</string>
+    <!--END ERROR TEXT-->
+
+    <!--HINT TEXT-->
+    <string name="hintHaveAccount">Tôi đã có tài khoản</string>
+    <string name="hintRegister">Tạo tạo khoản</string>
+    <string name="hintUsername">Tên đăng nhập</string>
+    <string name="hintPassword">Mật khẩu</string>
+    <string name="hintPasswordSeccond">Nhập lại mật khẩu</string>
+    <string name="hintEmail">Địa chỉ email</string>
+    <!--END HINT TEXT-->
+
+    <!--Button TEXT-->
+    <string name="btnRegister">Đăng ký</string>
+    <string name="btnSignIn">Đăng nhập</string>
+    <string name="btnSignInWith">Đăng nhập với</string>
+    <string name="btnLanguageViet">Việt Nam</string>
+    <string name="btnLanguageEnglish">Tiếng Anh</string>
+    <string name="btnLogOut">Đăng xuất</string>
+
+    <!--END Button TEXT-->
+    <!--Text Size-->
+    <string name="textSize">11</string>
+    <!--END Text Size-->
+</resources>
