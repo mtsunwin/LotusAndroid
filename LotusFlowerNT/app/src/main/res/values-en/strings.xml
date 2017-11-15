@@ -35,9 +35,12 @@
     <string name="btnRegister">Sign up</string>
     <string name="btnSignIn">Sign in</string>
     <string name="btnSignInWith">Sign in with</string>
-    <string name="btnLanguageViet">Viet Nam</string>
+    <string name="btnLanguageViet">Vietnamese</string>
     <string name="btnLanguageEnglish">English</string>
     <string name="btnLogOut">Log Out</string>
+    <string name="btnPopUp">Post</string>
+    <string name="textPopUpHint">Content</string>
+
     <!--END Button TEXT-->
     <!--Text Size-->
     <string name="textSize">11</string>

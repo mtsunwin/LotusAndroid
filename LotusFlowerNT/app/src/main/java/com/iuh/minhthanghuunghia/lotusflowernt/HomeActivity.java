@@ -24,6 +24,7 @@ import io.socket.emitter.Emitter;
 public class HomeActivity extends FragmentActivity {
     public static final int key_popNewsUp = 1;
     public static final String cutString = "<thang>";
+    public static final String port = "http://192.168.16.103:4567";
     private ActivityHomeBinding binding;
     private User user;
     private NewsTable database_news;
@@ -61,7 +62,7 @@ public class HomeActivity extends FragmentActivity {
             }
         });
         try {
-            socket = IO.socket("http://192.168.16.103:4567");
+            socket = IO.socket(port);
             socket.connect();
             while (!socket.connected()) {
                 Thread.sleep(100);

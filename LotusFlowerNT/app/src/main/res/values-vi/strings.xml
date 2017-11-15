@@ -38,6 +38,8 @@
     <string name="btnLanguageViet">Việt Nam</string>
     <string name="btnLanguageEnglish">Tiếng Anh</string>
     <string name="btnLogOut">Đăng xuất</string>
+    <string name="btnPopUp">Đăng tin</string>
+    <string name="textPopUpHint">Nội dung</string>
 
     <!--END Button TEXT-->
     <!--Text Size-->
