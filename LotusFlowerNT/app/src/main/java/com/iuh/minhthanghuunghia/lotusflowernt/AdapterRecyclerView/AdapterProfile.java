@@ -34,7 +34,6 @@ public class AdapterProfile extends RecyclerView.Adapter {
 
     public interface callBack {
         void openCamera();
-
         void openCameraBig();
     }
 

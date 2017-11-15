@@ -96,7 +96,7 @@ public class ProfileFragment extends Fragment implements AdapterProfile.callBack
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                for (News nt1 : database_news.getList()) {
+                for (News nt1 : database_news.getMyList(user.getUsername())) {
                     boolean g1 = false;
                     for (News nt2 : dsCompleted) {
                         if (nt1.equals(nt2))

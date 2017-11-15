@@ -71,7 +71,11 @@ public class NewsTable extends MyTable {
                 news1.setUserName(cursor.getString(2));
                 news1.setTime(cursor.getString(3));
                 news1.setContent(cursor.getString(4));
-                news1.setLike(cursor.getString(5) == "true" ? true : false);
+                if (cursor.getInt(5) == 1 || cursor.getString(5).equals("true")) {
+                    news1.setLike(true);
+                } else {
+                    news1.setLike(false);
+                }
                 newsArrayList.add(news1);
                 cursor.moveToNext();
             }

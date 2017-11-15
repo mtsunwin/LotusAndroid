@@ -21,6 +21,7 @@ public class UserTable extends MyTable {
     public static final String col_gender = "gender";
     public static final String col_about = "about";
     private static final String col_id = "id";
+    
     private static final int id = 0;
     private static final int username = 1;
     private static final int password = 2;

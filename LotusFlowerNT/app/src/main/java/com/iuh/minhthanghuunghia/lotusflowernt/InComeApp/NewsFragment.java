@@ -1,12 +1,14 @@
 package com.iuh.minhthanghuunghia.lotusflowernt.InComeApp;
 
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,19 @@ public class NewsFragment extends Fragment {
                 container, false);
 
         RecyclerView recyclerView = binding.recyclerView;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            recyclerView.setOnScrollListener(new HidingScrollListener() {
+                @Override
+                public void onHide() {
+                    Log.e("tmtt", "hide");
+                }
+
+                @Override
+                public void onShow() {
+                    Log.e("tmtt", "showw");
+                }
+            });
+        }
         database_news = new NewsTable(getContext());
         /*Reflection END*/
         dsNews = database_news.getList();
@@ -88,8 +103,8 @@ public class NewsFragment extends Fragment {
                 }
                 binding.swipeRefreshLayout.setRefreshing(false);
             }
-        });
 
+        });
         return binding.getRoot();
     }
 
