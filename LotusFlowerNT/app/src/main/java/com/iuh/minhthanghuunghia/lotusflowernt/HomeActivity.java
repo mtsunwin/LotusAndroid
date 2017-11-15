@@ -63,6 +63,7 @@ public class HomeActivity extends FragmentActivity {
         });
         try {
             socket = IO.socket(port);
+
             socket.connect();
             while (!socket.connected()) {
                 Thread.sleep(100);
